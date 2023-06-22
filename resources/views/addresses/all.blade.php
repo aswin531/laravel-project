@@ -36,10 +36,33 @@
             padding: 4px 8px;
             border-radius: 4px;
             cursor: pointer;
+            text-decoration: none;
         }
+        .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        .btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        }
+
+        .btn-danger:hover {
+        background-color: #c82333;
+}
+
     </style>
 </head>
 <body>
+<a class="btn edit-button" href="{{ route('home') }}">Go back</a>
     <h1>All Addresses</h1>
 
     <table>
@@ -61,9 +84,10 @@
                         <form action="{{ route('DeleteAddress', $address) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" onclick="return confirm('Are you sure you want to delete this address?')">Delete</button>
+                            <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure you want to delete this address?')">Delete</button>
                         </form>
-                        <a href="{{ route('EditAddress', $address) }}" class="edit-button">Edit</a>
+                        <br>
+                        <a href="{{ route('EditAddress', $address) }}" class="btn edit-button">Edit</a>
                     </td>
                 </tr>
             @endforeach
