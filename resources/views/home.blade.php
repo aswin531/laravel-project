@@ -18,6 +18,8 @@
                 <div class="address-actions">
                     <a class="btn btn-primary" href="{{ route('AddAddress') }}">Add an Address</a>
                     <a class="btn btn-primary" href="{{ route('AllAddresses') }}">View All Addresses</a>
+                    <a class="btn btn-primary" href="{{ route('SearchAddress') }}">Search addrerss</a>
+
                 </div>
             </div>
         @endauth

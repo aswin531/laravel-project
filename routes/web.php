@@ -33,4 +33,11 @@ Route::post('/addresses', [AddressController::class, 'store']);
 Route::get('/addresses', [AddressController::class, 'showAll'])->name('AllAddresses');
 
 
-Route::get('/search', 'AddressController@search')->name('address.search');
+Route::get('/search', [AddressController::class, 'search'])->name('SearchAddress');
+
+Route::delete('/addresses/{address}', [AddressController::class, 'destroy'])->name('DeleteAddress');
+
+
+Route::get('/addresses/{address}/edit', [AddressController::class, 'edit'])->name('EditAddress');
+Route::put('/addresses/{address}/update', [AddressController::class, 'update'])->name('UpdateAddress');
+
