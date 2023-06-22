@@ -57,7 +57,7 @@ class AddressController extends Controller
 
        public function edit(Address $address)
        {
-            return view('EditAddress', compact('address'));
+            return view('addresses.edit', compact('address'));
 
        }
         
@@ -71,7 +71,7 @@ class AddressController extends Controller
 
         $address->update($request->all());
 
-        return redirect()->route('UpdateAddress')->with('success', 'Address updated successfully');
+        return redirect()->route('AllAddresses')->with('success', 'Address updated successfully');
         }
 
 

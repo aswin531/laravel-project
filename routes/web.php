@@ -39,5 +39,5 @@ Route::delete('/addresses/{address}', [AddressController::class, 'destroy'])->na
 
 
 Route::get('/addresses/{address}/edit', [AddressController::class, 'edit'])->name('EditAddress');
-Route::put('/addresses/{address}/update', [AddressController::class, 'update'])->name('UpdateAddress');
+Route::put('/addresses/{address}', [AddressController::class, 'update'])->name('UpdateAddress');
 
